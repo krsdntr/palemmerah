@@ -213,6 +213,7 @@
     align-items: center;
     padding: 1.5rem;
     border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
 }
 
 .cart-header h3 {
@@ -235,7 +236,7 @@
 }
 
 .cart-body {
-    flex-grow: 1;
+    flex: 1;
     overflow-y: auto;
     padding: 1.5rem;
 }

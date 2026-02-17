@@ -1010,45 +1010,42 @@ button {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* =============== SCROLL UP ===============*/
-/* Scroll Up */
+/* =============== SCROLL UP =============== */
 .scrollup {
   position: fixed;
-  right: 1.5rem;
+  right: 2rem;
   bottom: -20%;
   background: var(--primary-color);
-  width: 50px;
-  height: 50px;
+  color: #fff;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-size: 1.25rem;
-  z-index: var(--z-tooltip);
-  transition: .4s;
-  box-shadow: 0 4px 12px rgba(196, 30, 58, .3);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  z-index: var(--z-fixed);
 }
 
 .scrollup:hover {
-  bottom: 6rem;
-  background: #a01828;
-  box-shadow: 0 6px 16px rgba(196, 30, 58, .5);
+  background: var(--primary-dark);
+  transform: translateY(-5px);
 }
 
 .scrollup__icon {
-  color: #fff;
+  font-size: 1.25rem;
 }
 
 .show-scroll {
-  bottom: 6rem;
+  bottom: 2rem;
 }
 
 /* =============== WHATSAPP FLOATING BUTTON =============== */
 .whatsapp-float {
   position: fixed;
   right: 2rem;
-  bottom: 7rem;
+  bottom: 8.5rem;
   background: #25D366;
   color: #fff;
   width: 60px;
@@ -1201,13 +1198,23 @@ button {
 
   .scrollup {
     right: 1rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  .scrollup__icon {
+    font-size: 1.125rem;
+  }
+
+  .show-scroll {
+    bottom: 1.5rem;
   }
 
   .whatsapp-float {
     right: 1rem;
-    bottom: 6rem;
-    width: 50px;
-    height: 50px;
+    bottom: 7.5rem;
+    width: 55px;
+    height: 55px;
   }
 
   .whatsapp-float__icon {

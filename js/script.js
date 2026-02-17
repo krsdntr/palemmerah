@@ -81,6 +81,8 @@ if (typeof ScrollReveal !== 'undefined') {
     sr.reveal('.tentang__image', { delay: 200, origin: 'left' });
     sr.reveal('.tentang__content', { delay: 300, origin: 'right' });
     sr.reveal('.menu__card', { delay: 100, interval: 100 });
+    sr.reveal('.testimonials__rating', { delay: 200 });
+    sr.reveal('.testimonial__card', { delay: 100, interval: 100 });
     sr.reveal('.galeri__item', { delay: 100, interval: 100 });
     sr.reveal('.kontak__card', { delay: 100, interval: 100 });
     sr.reveal('.kontak__map', { delay: 300, origin: 'right' });

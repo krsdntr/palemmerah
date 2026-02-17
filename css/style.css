@@ -957,6 +957,7 @@ button {
 .footer__title {
   font-size: 1.125rem;
   margin-bottom: var(--mb-1);
+  color: var(--gold-color);
 }
 
 .footer__links {

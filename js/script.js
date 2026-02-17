@@ -125,6 +125,31 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
+/*=============== SHOW SCROLL UP ===============*/
+function scrollUp() {
+    const scrollUp = document.getElementById('scroll-up');
+    if (scrollUp) {
+        if (window.scrollY >= 350) {
+            scrollUp.classList.add('show-scroll');
+        } else {
+            scrollUp.classList.remove('show-scroll');
+        }
+    }
+}
+window.addEventListener('scroll', scrollUp);
+
+// Smooth scroll to top
+const scrollUpBtn = document.getElementById('scroll-up');
+if (scrollUpBtn) {
+    scrollUpBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
 /*==================== SMOOTH SCROLL ====================*/
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

@@ -137,46 +137,50 @@
                 </button>
             </div>
 
-            <form class="checkout-form" id="checkout-form">
-                <div class="form-group">
-                    <label for="customer-name">Nama Pemesan <span class="required">*</span></label>
-                    <input type="text" id="customer-name" name="customerName" required
-                        placeholder="Masukkan nama lengkap">
-                </div>
+            <div class="checkout-modal__body">
+                <form class="checkout-form" id="checkout-form">
+                    <div class="form-group">
+                        <label for="customer-name">Nama Pemesan <span class="required">*</span></label>
+                        <input type="text" id="customer-name" name="customerName" required
+                            placeholder="Masukkan nama lengkap">
+                    </div>
 
-                <div class="form-group">
-                    <label for="customer-phone">No. Telepon <span class="required">*</span></label>
-                    <input type="tel" id="customer-phone" name="customerPhone" required
-                        placeholder="Contoh: 08123456789">
-                </div>
+                    <div class="form-group">
+                        <label for="customer-phone">No. Telepon <span class="required">*</span></label>
+                        <input type="tel" id="customer-phone" name="customerPhone" required
+                            placeholder="Contoh: 08123456789">
+                    </div>
 
-                <div class="form-group">
-                    <label for="customer-address">Alamat Pengiriman <span class="required">*</span></label>
-                    <textarea id="customer-address" name="customerAddress" required rows="3"
-                        placeholder="Masukkan alamat lengkap pengiriman"></textarea>
-                </div>
+                    <div class="form-group">
+                        <label for="customer-address">Alamat Pengiriman <span class="required">*</span></label>
+                        <textarea id="customer-address" name="customerAddress" required rows="3"
+                            placeholder="Masukkan alamat lengkap pengiriman"></textarea>
+                    </div>
 
-                <div class="form-group">
-                    <label for="delivery-date">Tanggal Pengiriman <span class="required">*</span></label>
-                    <input type="date" id="delivery-date" name="deliveryDate" required>
-                </div>
+                    <div class="form-group">
+                        <label for="delivery-date">Tanggal Pengiriman <span class="required">*</span></label>
+                        <input type="date" id="delivery-date" name="deliveryDate" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="delivery-time">Waktu Pengiriman</label>
-                    <input type="time" id="delivery-time" name="deliveryTime" placeholder="Contoh: 14:00">
-                </div>
+                    <div class="form-group">
+                        <label for="delivery-time">Waktu Pengiriman</label>
+                        <input type="time" id="delivery-time" name="deliveryTime" placeholder="Contoh: 14:00">
+                    </div>
 
-                <div class="form-group">
-                    <label for="notes">Catatan Tambahan</label>
-                    <textarea id="notes" name="notes" rows="2"
-                        placeholder="Catatan khusus untuk pesanan (opsional)"></textarea>
-                </div>
+                    <div class="form-group">
+                        <label for="notes">Catatan Tambahan</label>
+                        <textarea id="notes" name="notes" rows="2"
+                            placeholder="Catatan khusus untuk pesanan (opsional)"></textarea>
+                    </div>
+                </form>
+            </div>
 
-                <button type="submit" class="btn btn--primary btn-submit-checkout">
+            <div class="checkout-modal__footer">
+                <button type="submit" form="checkout-form" class="btn btn--primary btn-submit-checkout">
                     <i class="fab fa-whatsapp"></i>
                     Kirim Pesanan via WhatsApp
                 </button>
-            </form>
+            </div>
         </div>
     </div>
 

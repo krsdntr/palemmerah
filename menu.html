@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Menu Palem Merah - Daftar lengkap kue, nasi box, prasmanan, dan paket katering dengan harga terjangkau">
+    <title>Menu - Palem Merah Bogor</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu-page.css">
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <i class="fas fa-utensils"></i>
+                <span>Palem Merah</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">Beranda</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#tentang" class="nav__link">Tentang</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="menu.html" class="nav__link active-link">Menu Lengkap</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#galeri" class="nav__link">Galeri</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#kontak" class="nav__link">Kontak</a>
+                    </li>
+                </ul>
+                <div class="nav__close" id="nav-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+
+            <div class="nav__actions">
+                <button class="cart-button" id="cart-button">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="container">
+            <h1 class="menu-hero__title">Menu Lengkap Palem Merah</h1>
+            <p class="menu-hero__subtitle">Pilih menu favorit Anda dan pesan sekarang!</p>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section class="menu-section section">
+        <div class="container">
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <button class="category-btn active" data-category="all">Semua</button>
+                <button class="category-btn" data-category="kue_manis_traditional">Kue Tradisional</button>
+                <button class="category-btn" data-category="kue_manis">Kue Manis</button>
+                <button class="category-btn" data-category="kue_asin">Kue Asin</button>
+                <button class="category-btn" data-category="nasi_box">Nasi Box</button>
+                <button class="category-btn" data-category="prasmanan">Prasmanan</button>
+                <button class="category-btn" data-category="coffee_break">Coffee Break</button>
+                <button class="category-btn" data-category="snack_box">Snack Box</button>
+                <button class="category-btn" data-category="umbi">Umbi-umbian</button>
+            </div>
+
+            <!-- Menu Items Container -->
+            <div id="menu-items-container"></div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Keranjang Belanja</h3>
+            <button class="cart-close" id="cart-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="cart-body" id="cart-body">
+            <div class="cart-empty" id="cart-empty">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Keranjang belanja Anda kosong</p>
+            </div>
+        </div>
+
+        <div class="cart-footer" id="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price" id="total-price">Rp 0</span>
+            </div>
+            <button class="btn btn--primary btn-checkout" id="btn-checkout">
+                <i class="fab fa-whatsapp"></i>
+                Checkout via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkout-modal">
+        <div class="checkout-modal__content">
+            <div class="checkout-modal__header">
+                <h3>Detail Pemesanan</h3>
+                <button class="checkout-modal__close" id="checkout-modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <form class="checkout-form" id="checkout-form">
+                <div class="form-group">
+                    <label for="customer-name">Nama Pemesan <span class="required">*</span></label>
+                    <input type="text" id="customer-name" name="customerName" required
+                        placeholder="Masukkan nama lengkap">
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-phone">No. Telepon <span class="required">*</span></label>
+                    <input type="tel" id="customer-phone" name="customerPhone" required
+                        placeholder="Contoh: 08123456789">
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-address">Alamat Pengiriman <span class="required">*</span></label>
+                    <textarea id="customer-address" name="customerAddress" required rows="3"
+                        placeholder="Masukkan alamat lengkap pengiriman"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="delivery-date">Tanggal Pengiriman <span class="required">*</span></label>
+                    <input type="date" id="delivery-date" name="deliveryDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="delivery-time">Waktu Pengiriman</label>
+                    <input type="time" id="delivery-time" name="deliveryTime" placeholder="Contoh: 14:00">
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Catatan Tambahan</label>
+                    <textarea id="notes" name="notes" rows="2"
+                        placeholder="Catatan khusus untuk pesanan (opsional)"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn--primary btn-submit-checkout">
+                    <i class="fab fa-whatsapp"></i>
+                    Kirim Pesanan via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container grid">
+                <div class="footer__content">
+                    <a href="index.html" class="footer__logo">
+                        <i class="fas fa-utensils"></i>
+                        <span>Palem Merah</span>
+                    </a>
+                    <p class="footer__description">
+                        Restoran & Katering Masakan Indonesia di Bogor.
+                        Melayani dengan sepenuh hati sejak lebih dari 20 tahun.
+                    </p>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Menu</h3>
+                    <ul class="footer__links">
+                        <li><a href="index.html" class="footer__link">Beranda</a></li>
+                        <li><a href="index.html#tentang" class="footer__link">Tentang</a></li>
+                        <li><a href="menu.html" class="footer__link">Menu Lengkap</a></li>
+                        <li><a href="index.html#galeri" class="footer__link">Galeri</a></li>
+                        <li><a href="index.html#kontak" class="footer__link">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Kontak</h3>
+                    <ul class="footer__links">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Raya Dramaga No.43 Km.7, Bogor</span>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/628121904646" target="_blank" rel="noopener noreferrer">+62
+                                812-190-4646</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Ikuti Kami</h3>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__copy">
+                <p>&copy; 2026 Palem Merah. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Up Button -->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="fas fa-arrow-up scrollup__icon"></i>
+    </a>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/628121904646?text=Halo%20Palem%20Merah%2C%20saya%20ingin%20bertanya" class="whatsapp-float"
+        target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp">
+        <i class="fab fa-whatsapp whatsapp-float__icon"></i>
+    </a>
+
+    <!-- Menu Data -->
+    <script src="js/menu-data.js"></script>
+    <!-- Cart Logic -->
+    <script src="js/cart.js"></script>
+    <!-- Menu Page Script -->
+    <script src="js/menu-page.js"></script>
+    <!-- Main Script -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

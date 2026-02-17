@@ -1010,35 +1010,38 @@ button {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* =============== SCROLL UP =============== */
+/* =============== SCROLL UP ===============*/
+/* Scroll Up */
 .scrollup {
   position: fixed;
-  right: 2rem;
+  right: 1.5rem;
   bottom: -20%;
   background: var(--primary-color);
-  color: #fff;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-  z-index: var(--z-fixed);
+  color: #fff;
+  font-size: 1.25rem;
+  z-index: var(--z-tooltip);
+  transition: .4s;
+  box-shadow: 0 4px 12px rgba(196, 30, 58, .3);
 }
 
 .scrollup:hover {
-  background: var(--primary-dark);
-  transform: translateY(-5px);
+  bottom: 6rem;
+  background: #a01828;
+  box-shadow: 0 6px 16px rgba(196, 30, 58, .5);
 }
 
 .scrollup__icon {
-  font-size: 1.25rem;
+  color: #fff;
 }
 
 .show-scroll {
-  bottom: 3rem;
+  bottom: 6rem;
 }
 
 /* =============== WHATSAPP FLOATING BUTTON =============== */

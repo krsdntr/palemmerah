@@ -80,9 +80,8 @@ if (typeof ScrollReveal !== 'undefined') {
     sr.reveal('.hero__image', { delay: 300, origin: 'right' });
     sr.reveal('.tentang__image', { delay: 200, origin: 'left' });
     sr.reveal('.tentang__content', { delay: 300, origin: 'right' });
-    sr.reveal('.menu__card', { delay: 100, interval: 100 });
-    sr.reveal('.testimonials__rating', { delay: 200 });
-    sr.reveal('.testimonial__card', { delay: 100, interval: 100 });
+    sr.reveal('.menu__card', { interval: 100, origin: 'bottom', distance: '50px' });
+    sr.reveal('.testimonials__rating, .testimonial__card', { interval: 100, origin: 'bottom', distance: '50px' });
     sr.reveal('.galeri__item', { delay: 100, interval: 100 });
     sr.reveal('.kontak__card', { delay: 100, interval: 100 });
     sr.reveal('.kontak__map', { delay: 300, origin: 'right' });
@@ -103,7 +102,7 @@ galleryItems.forEach(item => {
     });
 });
 
-// Close modal when clicking on close button
+// Close modal when clicking close button
 if (closeModal) {
     closeModal.addEventListener('click', function () {
         modal.style.display = 'none';
@@ -119,9 +118,9 @@ if (modal) {
     });
 }
 
-// Close modal with ESC key
+// Close modal with Escape key
 document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && modal.style.display === 'block') {
+    if (e.key === 'Escape' && modal && modal.style.display === 'block') {
         modal.style.display = 'none';
     }
 });
